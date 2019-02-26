@@ -19,20 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYC-hQ-HEy">
-                                <rect key="frame" x="16" y="20" width="343" height="541"/>
+                                <rect key="frame" x="16" y="20" width="343" height="582"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggy-q9-ShP">
-                                <rect key="frame" x="198" y="579" width="92" height="30"/>
-                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Stop tracking">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="StopTrackingBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yW7-bT-Bkw"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKE-Qd-PtY">
-                                <rect key="frame" x="79" y="579" width="94" height="30"/>
+                                <rect key="frame" x="79" y="617" width="94" height="30"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Start tracking">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,16 +31,26 @@
                                     <action selector="StartTrackingBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5j1-5A-LVe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggy-q9-ShP">
+                                <rect key="frame" x="200" y="617" width="92" height="30"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Stop tracking">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="StopTrackingBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yW7-bT-Bkw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BKE-Qd-PtY" secondAttribute="bottom" constant="58" id="6bQ-j3-eh2"/>
-                            <constraint firstItem="eYC-hQ-HEy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EkL-QP-JVk"/>
+                            <constraint firstItem="Ggy-q9-ShP" firstAttribute="top" secondItem="eYC-hQ-HEy" secondAttribute="bottom" constant="15" id="58v-zk-dy9"/>
+                            <constraint firstItem="eYC-hQ-HEy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="5sw-fU-3gK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BKE-Qd-PtY" secondAttribute="bottom" constant="20" id="6bQ-j3-eh2"/>
+                            <constraint firstItem="eYC-hQ-HEy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LXz-dZ-mVP"/>
                             <constraint firstItem="Ggy-q9-ShP" firstAttribute="baseline" secondItem="BKE-Qd-PtY" secondAttribute="baseline" id="NjI-Uv-cue"/>
-                            <constraint firstItem="eYC-hQ-HEy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Nna-Iy-qeL"/>
-                            <constraint firstItem="eYC-hQ-HEy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ucf-BK-RYn"/>
-                            <constraint firstItem="BKE-Qd-PtY" firstAttribute="top" secondItem="eYC-hQ-HEy" secondAttribute="bottom" constant="18" id="d6X-pq-sFy"/>
-                            <constraint firstItem="Ggy-q9-ShP" firstAttribute="leading" secondItem="BKE-Qd-PtY" secondAttribute="trailing" constant="25" id="dJD-UY-YjE"/>
+                            <constraint firstItem="Ggy-q9-ShP" firstAttribute="leading" secondItem="BKE-Qd-PtY" secondAttribute="trailing" constant="27" id="dJD-UY-YjE"/>
+                            <constraint firstItem="eYC-hQ-HEy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dua-qf-ORd"/>
                             <constraint firstItem="BKE-Qd-PtY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="79" id="ujL-pl-5xI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
