@@ -6,10 +6,12 @@
 //  Copyright © 2019 Sebastian Laursen. All rights reserved.
 //
 
+import UIKit
 import CoreLocation
 
 protocol CoreLocDelegate: class {
     func getCoordinates(location: Coordinates)
+    func alertLocationAccess()
 }
 
 struct Coordinates {
@@ -30,15 +32,21 @@ class CoreLocationManadger:  NSObject, CLLocationManagerDelegate {
         super.init()
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation//kCLLocationAccuracyBest
     }
     
     func startTracking() {
-        if CLLocationManager.locationServicesEnabled() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
             locationManager.startUpdatingLocation()
-        }
-        else {
+        case .notDetermined:
             locationManager.requestAlwaysAuthorization()
+        case .restricted:
+            break
+        case .denied:
+            delegate!.alertLocationAccess()
+        case .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
         }
     }
     
